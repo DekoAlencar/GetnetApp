@@ -1,0 +1,21 @@
+
+.chart-tittle{
+    margin-top: -90px; 
+    width: 200px; 
+    margin-right: -60px
+}
+
+
+@media (min-width: 600px) and (orientation: landscape) {
+    .chart-tittle{
+        margin-right: -70px;        
+    }
+}
+
+@media (min-width: 1024px){
+    .chart-tittle{
+        margin-right: -15%
+    }
+}
+
+  /* 31 2531 9400 */

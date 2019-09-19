@@ -1,0 +1,51 @@
+<div class="section">
+    <h3>Sistemas</h3>
+</div>
+<div class="divider"></div>
+<br>
+<div class="row">
+    <div class="col s12 m8">
+        <nav>
+            <div class="nav-wrapper blue-grey lighten-4">
+                <form>
+                    <div class="input-field">
+                        <input id="search" type="search" required>
+                        <label class="label-icon" placeholder="Digite uma chave para pesquisa"><i class="material-icons">search</i></label>
+                        <i class="material-icons">close</i>
+                    </div>
+                </form>
+            </div>
+        </nav>
+    </div>
+    <div class="col s12 m4">
+        <button class="waves-effect waves-light btn-large" (click)="cadastrar()"><i class="material-icons left">add</i> Adicionar Sistema</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col s12 m12">
+        <table class="striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Sistema</th>
+                    <th>Token</th>
+                    <th>Url Retorno</th>                    
+                </tr>
+            </thead>
+            
+            <tbody >
+                <tr *ngFor="let item of sistemas">
+                <td>{{item.id}}</td>
+                <td>{{item.nome}}</td>
+                <td>{{item.token}}</td>
+                <td>{{item.urlAtualizacao}}</td>
+                <td>
+                    <a class="btn-floating btn-small waves-effect waves-light blue-grey lighten-3" (click)="editar(item)"><i class="material-icons">description</i></a>
+                    <a class="btn-floating btn-small waves-effect waves-light red darken-4" (click)="delete(item)"><i class="material-icons">delete</i></a>
+                </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

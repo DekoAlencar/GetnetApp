@@ -1,0 +1,53 @@
+
+    <div class="section">
+        <h3>Dashboard</h3>
+    </div>
+    <div class="divider"></div>
+    <br>
+    <div class="row">
+        <div *ngFor="let card of cards">
+            <div class="col s12 m4">
+                <div class="card" [ngClass]="{ 
+                    'bg-turquoise': card.tipo == 'Debito',
+                    'bg-asteroid': card.tipo != 'Debito'}">
+                    <div class="card-content white-text">
+                        <span class="card-title">{{card.tipo}}</span>
+                        <p>{{card.valor | currency:'BRL'}}</p> 
+                        <div class="right chart-tittle ">
+                            <canvas baseChart
+                                [data]="pieChartData"
+                                [colors] = "pieColors"
+                                [chartType]="pieChartType"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="divider"></div>
+        <div class="section">
+            <div class="col s9 m6">
+                <h4>Analítico</h4>
+            </div>
+            <div class="col s3">
+                <a href="/transacoes" class="waves-effect waves-light btn-large">Transações</a>
+            </div>
+        </div>
+        <div style="display: block">
+            <canvas baseChart
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [legend]="lineChartLegend"
+                [chartType]="lineChartType">
+            </canvas>
+            <!-- <canvas baseChart
+                    [datasets]="barChartData"
+                    [labels]="barChartLabels"
+                    [options]="barChartOptions"
+                    [legend]="barChartLegend"
+                    [chartType]="barChartType">
+            </canvas> -->
+        </div>
+    </div>
+    

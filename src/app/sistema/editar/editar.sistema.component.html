@@ -1,0 +1,39 @@
+<div class="section">
+    <h3>{{titulo}}</h3>
+</div>
+<div class="divider"></div>
+<br>
+<div *ngIf="msgError">
+    <blockquote class="error">
+        <h5>{{msgError}}</h5>
+    </blockquote>
+</div>
+<div *ngIf="msgSuccess">
+    <blockquote class="sucess">
+        <h5>{{msgSuccess}}</h5>
+    </blockquote>
+</div>
+<form #f="ngForm" (ngSubmit)="cadastar(f)">
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="Nome" type="text" name="nome" class="validate" [(ngModel)]="sistema.nome">
+            <label for="nome">Sistema</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="Nome" type="text" class="validate"name="token" [(ngModel)]="sistema.token">
+            <label for="nome">token</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="Nome" type="text" class="validate" name="urlAtualizacao" [(ngModel)]="sistema.urlAtualizacao">
+            <label for="nome">url Retorno</label>
+        </div>
+    </div>
+    <div class="row">
+        <button class="waves-effect waves-light btn-large"><i class="material-icons left">check</i>Cadastar</button>
+        <button class="waves-effect waves-light btn-large blue-grey lighten-3" (click)="cancelar()"><i class="material-icons left">arrow_back</i>voltar</button>
+    </div>
+</form>

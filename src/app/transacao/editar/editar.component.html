@@ -1,0 +1,63 @@
+<ul class="collection">
+    <li class="collection-item"><i class="material-icons">apps</i> <i class="material-icons">chevron_right</i> <label style="top: -20px">Editar</label></li>
+</ul>
+<div class="row">
+    <H3>Transação: {{transacao.id}}</H3>
+</div>
+<div class="row">
+    <div class="col s6 m7">
+        <div class="card card-content">
+        <table class="striped">
+            <thead>
+                <tr class="center-align">
+                    <h5>
+                        Informações 
+                    </h5>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="right-align"><label>Transação</label></td>
+                    <td class="left-align">Eclair</td>
+                </tr>
+                <tr>
+                    <td class="right-align"><label>Origem da solicitação</label></td>
+                    <td class="left-align">{{transacao.idSistema.nome}}</td>
+                </tr>
+                <tr>
+                    <td class="right-align"><label>Tipo da transação</label></td>
+                    <td class="left-align">{{transacao.tipo | enumTipo: transacao.tipoTransacao}}</td>
+                </tr>
+                <tr>
+                    <td class="right-align"><label>Situação</label></td>
+                    <td class="left-align">{{transacao.status | situacao: transacao.status}}</td>
+                </tr>
+                <tr>
+                    <td class="right-align"><label>Data solicitação</label></td>
+                    <td class="left-align">{{transacao.dataSolicitacao | date:'dd/MM/yyyy'}}</td>
+                </tr>
+                <tr>
+                    <td class="right-align"><label>Valor da transação</label></td>
+                    <td class="left-align">{{transacao.valor |  currency:'BRL'}}</td>
+                </tr>
+                <tr *ngIf="transacao.mensgaemErro">
+                    <td class="right-align"><label>Mensagem de Erro</label></td>
+                    <td class="left-align">{{transacao.mensgaemErro}}</td>
+                </tr>
+                <tr *ngIf="transacao.obs">
+                    <td class="right-align"><label>Mensagem do Emissor</label></td>
+                    <td class="left-align">{{transacao.obs}}</td>
+                </tr>
+            </tbody>
+        </table>  
+    </div>
+    </div>
+    <div class="col s12 m5">
+        <h5> Ações</h5>
+        <button (click)="atulizar()" class="waves-effect waves-light btn-large" style="width: 100%;"><i class="material-icons left">cached</i> Atualizar transação</button>
+        
+        <button (click)="cancelar()" class="waves-effect waves-light red darken-4 btn-large" style="width: 100%;"><i class="material-icons left">clear</i>Cancelar transação</button>
+        
+        <button (click)="envioOrigem()" class="waves-effect waves-light light-blue darken-4 btn-large" style="width: 100%;"><i class="material-icons left">cloud_upload</i> Atulizar Origem</button>
+    </div>
+</div>

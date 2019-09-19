@@ -1,0 +1,120 @@
+<ul class="collection">
+    <li class="collection-item"><i class="material-icons">apps</i> <i class="material-icons">chevron_right</i> <label style="top: -20px">Transações</label></li>
+</ul>
+    <div class="section">
+        <h3>Transações</h3>
+    </div>
+    <div class="divider"></div>
+    <br>
+    <div class="row">
+        <div class="col s12 m4">
+            <nav>
+                <div class="nav-wrapper blue-grey lighten-4">
+                    <form>
+                        <div class="input-field">
+                            <input id="search" type="search" required>
+                            <label class="label-icon" placeholder="Digite uma chave para pesquisa"><i class="material-icons">search</i></label>
+                            <i class="material-icons">close</i>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </div>
+        <div class="col s12 m2">
+            <div class="input-field">
+                <i class="material-icons prefix">date_range</i>
+                <input type="text" materialize="pickadate" [materializeParams]="dateOptions" class="validate">
+                <label for="icon_prefix">Data inicio</label>
+            </div>
+        </div>
+        <div class="col s12 m2">
+            <div class="input-field">
+                <i class="material-icons prefix">date_range</i>
+                <input type="text" materialize="pickadate" [materializeParams]="dateOptions" class="validate">
+                <label for="icon_prefix">Data fim</label>
+            </div>
+        </div>
+        <div class="col s12 m4">
+            <div class="input-field col s12">
+                <select multiple materialize="material_select" [materializeSelectOptions]="selectOptions">
+                    <!-- <option >*ngFor="let option of selectOptions" [value]="option.value"{{option.name}}</option> -->
+                    <option value="" disabled selected>Escolha as opções</option>
+                    <option *ngFor="let option of selectOptions" [value]="option.value">{{option.name}}</option>
+                </select>
+                <label>Filtro multiplo por situação</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12 m12">
+            <table class="striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Id Autorização</th>
+                        <th>Tipo</th>
+                        <th>Valor</th> 
+                        <th>Data</th>
+                        <th>Situação</th>
+                        <th>ações</th>                       
+                    </tr>
+                </thead>
+                
+                <tbody >
+                    <tr *ngFor="let item of transacoes">
+                    <td>{{item.id}}</td>
+                    <td>{{item.idPagamento}}</td>
+                    <td>{{item.tipoTransacao | enumTipo : item.tipoTransacao}}</td>
+                    <td>{{item.valor | currency:'BRL'}}</td>
+                    <td>{{item.dataSolicitacao | date:'dd/MM/yyyy hh:mm:ss p'}}</td>
+                    <td>{{item.status | situacao : item.status}}</td>
+                    <td>
+                        <a class="btn-floating btn-small waves-effect waves-light default" (click)="openModal(item)"><i class="material-icons">search</i></a>
+                        <a class="btn-floating btn-small waves-effect waves-light blue-grey lighten-3" (click)="editar(item)"><i class="material-icons">description</i></a>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+<!-- Modal detalhe -->
+<div id="modal1" class="modal " materialize="modal" [materializeParams]="[{dismissible: false}]" [materializeActions]="modalActions" *ngIf="detalhe">
+        <div class="modal-content" >
+            <div class="right">
+                <a class="btn-floating waves-effect waves-light deep-orange darken-4" (click)="closeModal()"> <i class="material-icons left">close</i>fechar</a>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <h3>{{detalhe.tipoTransacao | enumTipo : detalhe.tipoTransacao}}</h3>
+                    <p>Sistema: {{detalhe.idSistema.nome}}</p>
+                    <blockquote [hidden]="!detalhe.codigoErro">
+                        <h6>Codigo Erro: {{detalhe.codigoErro}}</h6> 
+                        <label>Mensagem: {{detalhe.mensgaemErro}}</label>
+                        <br>
+                        <label>{{detalhe.obs}}</label>
+                    </blockquote>
+                </div>
+                <div class="col s12">
+                    <h6>Dados da compra</h6>
+                </div>
+                <div class="col s6"><label>Valor da compra: </label>{{detalhe.valor | currency:'BRL'}}</div>
+                <div class="col s6"><label>Data da solicitacao: </label> {{detalhe.dataSolicitacao | date:'dd/MM/yyyy'}}</div>
+            </div>
+            <div class="row" *ngIf="detalhe.idCartao">
+                <div class="col s12">
+                    <h6>Dados do Cartão</h6>
+                </div>
+                <div class="col s6 m6">
+                    <label>Numero do cartão: </label>{{detalhe.idCartao.numero}}
+                </div>
+                <div class="col s6 m6">
+                    <label>Nome do cartão: </label>{{detalhe.idCartao.nome}}
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            
+        </div>
+        </div>
+</div>
+

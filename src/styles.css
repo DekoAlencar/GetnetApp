@@ -1,1 +1,190 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+    height: -webkit-fill-available;
+}
+
+
+form.cadastro, form.cadastro input, form.cadastro .select-wrapper svg {
+    margin-bottom: 0;
+    color: #fff;
+}
+
+form.cadastro .select-wrapper svg {
+    fill: #fff;
+}
+
+.open {
+    transition: width 1s;
+    width: 100%;
+    height: 500px;
+}
+
+.obrigatorio{
+    color: red;
+}
+
+.contas-pagar .carousel .indicators .indicator-item {
+    background-color: #ccc;
+}
+
+.contas-pagar .carousel .indicators .indicator-item.active {
+    background-color: #43A047;
+}
+
+.carousel.carousel-slider .carousel-item h2 {
+    margin: 10px;
+}
+
+.conteudo-tela{
+    margin: 10px;
+}
+
+.conteudo-tela h2{
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+}
+
+.botao-adicionar {
+    position: relative;
+}
+
+#modal-msg-erro{
+    background: white;
+    width: 280px;
+    height: 105px;
+    padding-top: 15px;
+    margin-inline-start: -20px;
+    margin-block-end: -20px;
+    margin-block-start: -20px;
+}
+
+#modal-msg-erro i {
+    color: red;
+}
+
+#modal-msg-erro button {
+    margin-top: 15px;
+    margin-block-end: -20px;
+}
+
+#modal-msg-success{
+    background: white;
+    width: 280px;
+    height: 105px;
+    padding-top: 15px;
+    margin-inline-start: -20px;
+    margin-block-end: -20px;
+    margin-block-start: -20px;
+}
+
+#modal-msg-success i {
+    color: green;
+}
+
+#modal-msg-success button {
+    margin-top: 15px;
+    margin-block-end: -20px;
+}
+
+.error-form {
+    color: red;
+    font-weight: 500;
+}
+
+ul.tabs li a {
+    background-color: transparent;
+    color: #43a047;
+}
+
+.resp-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+}
+
+.resp-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+#corteIframe {
+	position: absolute;
+	clip: rect(40px,424px,750px,55px); 
+	width: 424px; /* pode colocar o mesmo valor do segundo parâmetro */
+}
+
+.iframe-container {
+    overflow: hidden;
+    padding-top: 56.25%;
+    position: relative;
+  }
+   
+  .iframe-container iframe {
+     border: 0;
+     height: 800px;
+     left: 0;
+     position: absolute;
+     top: 0;
+     width: 100%;
+  }
+   
+  /* 4x3 Aspect Ratio */
+  .iframe-container-4x3 {
+    padding-top: 75%;
+  }
+
+  .img-logo{
+    width: 70%; 
+    padding-top: 5px;
+  }
+
+
+  .bg-asteroid{
+    background: #0f2027; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0f2027, #203a43, #2c5364); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+
+  .bg-blue-lagoon{
+    background: #43C6AC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #191654, #43C6AC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #191654, #43C6AC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+  }
+
+  .bg-memariana{
+    background: #aa4b6b;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3b8d99, #6b6b83, #aa4b6b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+  }
+  
+  .bg-turquoise{
+    background: #136a8a;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #267871, #136a8a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #267871, #136a8a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+  }
+
+  .bg-deep-sea-space{
+    background: #2C3E50;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4CA1AF, #2C3E50);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4CA1AF, #2C3E50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+  }
+
+  .bg-night-day{
+    background: #2c3e50;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3498db, #2c3e50);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3498db, #2c3e50); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+  }
+
+blockquote.sucess {
+    border-left: 5px solid #00796b;
+    color: #00796b;
+}
+
+blockquote.error {
+    border-left: 5px solid #d32f2f;
+    color: #d32f2f
+}
