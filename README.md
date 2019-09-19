@@ -1,6 +1,9 @@
-# GetnetApp
+# GetnetApp with Matrialize and Ngx-Materialize
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+### This project is made whit materialize and ngx-materialize
+* [Document Materialize](https://materializecss.com).
+* [Documentation Ngx-Materialize](https://sherweb.github.io/ngx-materialize/home).
 
 ## Development server
 
